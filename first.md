@@ -1,14 +1,3 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<html>
-  <body>
-		<script type="text/javascript" src="showdown.js"></script>
-		<!-- // <script type="text/javascript" src="showdown-gui.js"></script> -->
-		<!-- // <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>  -->
-
-
-<textarea id= 'markdown' style = "left:999999px,top:2000px">
-
 ![mahua](mahua-logo.jpg)
 ##MaHua是什么?
 一个在线编辑markdown文档的编辑器
@@ -57,35 +46,3 @@
     site : "http://jser.me"
   }
 ```
-</textarea>
-<script type="text/javascript">
-	
-	var converter = new Showdown.converter();
-
-	// print(converter.makeHtml('#hello markdown!'));
-
-	// var _url = "first.md"; 
-	// $("#dv").load(_url,function(data){ 
-	// 	$(this).html(data); 
-	// }
-
-	var pane = document.getElementById("markdown");
-	var text = pane.value;
-	document.write(converter.makeHtml(text));
-
-	// function readFile(filename){     
-	// 	var fso = new ActiveXObject("Scripting.FileSystemObject");     
-	// 	var f = fso.OpenTextFile(filename,1);     
-	// 	var s = "";     
-	// 	while (!f.AtEndOfStream)     
-	// 	s += f.ReadLine()+"\n";     
-	// 	f.Close();     
-	// 	return s;     
-	// }
-
-
-	// document.write(converter.makeHtml(readFile('first.md')));
-
-</script>
-</body>
-</html>
