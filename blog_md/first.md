@@ -1,4 +1,4 @@
-![mahua](mahua-logo.jpg)
+![mahua](../mahua-logo.jpg)
 ##MaHua是什么?
 一个在线编辑markdown文档的编辑器
 
@@ -16,6 +16,7 @@
 * 完美兼容`Github`的markdown语法
 * 预览区域`代码高亮`
 * 所有选项自动记忆
+
 
 ##有问题反馈
 
