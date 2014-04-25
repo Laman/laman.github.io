@@ -12,7 +12,7 @@
 
 ###打印当前所有字体以找到 fontName
 
-```javascript
+```
 
 NSArray *familyNames = [[NSArray alloc] initWithArray:[UIFont familyNames]];
 NSArray *fontNames;

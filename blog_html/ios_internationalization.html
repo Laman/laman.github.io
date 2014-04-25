@@ -1,0 +1,211 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<style>
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", Arial, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+    color: #737373;
+    background-color: white;
+    margin: 10px 13px 10px 13px;
+}
+table {
+	margin: 10px 0 15px 0;
+	border-collapse: collapse;
+}
+td,th {	
+	border: 1px solid #ddd;
+	padding: 3px 10px;
+}
+th {
+	padding: 5px 10px;	
+}
+
+a {
+    color: #0069d6;
+}
+a:hover {
+    color: #0050a3;
+    text-decoration: none;
+}
+a img {
+    border: none;
+}
+p {
+    margin-bottom: 9px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #404040;
+    line-height: 36px;
+}
+h1 {
+    margin-bottom: 18px;
+    font-size: 30px;
+}
+h2 {
+    font-size: 24px;
+}
+h3 {
+    font-size: 18px;
+}
+h4 {
+    font-size: 16px;
+}
+h5 {
+    font-size: 14px;
+}
+h6 {
+    font-size: 13px;
+}
+hr {
+    margin: 0 0 19px;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+}
+blockquote {
+    padding: 13px 13px 21px 15px;
+    margin-bottom: 18px;
+    font-family:georgia,serif;
+    font-style: italic;
+}
+blockquote:before {
+    content:"\201C";
+    font-size:40px;
+    margin-left:-10px;
+    font-family:georgia,serif;
+    color:#eee;
+}
+blockquote p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 18px;
+    margin-bottom: 0;
+    font-style: italic;
+}
+code, pre {
+    font-family: Monaco, Andale Mono, Courier New, monospace;
+}
+code {
+    background-color: #fee9cc;
+    color: rgba(0, 0, 0, 0.75);
+    padding: 1px 3px;
+    font-size: 12px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+pre {
+    display: block;
+    padding: 14px;
+    margin: 0 0 18px;
+    line-height: 16px;
+    font-size: 11px;
+    border: 1px solid #d9d9d9;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+pre code {
+    background-color: #fff;
+    color:#737373;
+    font-size: 11px;
+    padding: 0;
+}
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:10px auto;
+    }
+}
+@media print {
+	body,code,pre code,h1,h2,h3,h4,h5,h6 {
+		color: black;
+	}
+	table, pre {
+		page-break-inside: avoid;
+	}
+}
+</style>
+<title>ios 的国际化</title>
+
+</head>
+<body>
+<h2>ios 的国际化</h2>
+
+<p><img src="../image/internationalization.jpg" alt="internationalization" /></p>
+
+<h3>为什么要国际化</h3>
+
+<ul>
+<li><p><code>跨越语言的障碍</code>，让你的应用程序适合更多的人群</p></li>
+<li><p>让你的应用程序可以根据语言环境的不同，转换成<code>不同的风格</code>！</p></li>
+</ul>
+
+
+<h3>怎样国际化（xcode5 环境下）</h3>
+
+<h4>a、基本设置的国际化</h4>
+
+<p>1、默认项目只有英语这个语言，可以在 project 里面的 info 选项下面会有Localizations，增加 chinese 语言；</p>
+
+<p>2、在InfoPlist.strings下面，会有针对这两个语言的文件</p>
+
+<p>如要在不同的语言环境下应用的名字显示不一样：</p>
+
+<p>在chinese 这个文件下面：
+CFBundleDisplayName="中文";</p>
+
+<p>在english 这个文件下面
+CFBundleDisplayName="english";</p>
+
+<p>那么如果系统的语言设置成中文，就会现实 “中文”  如果是英文就会显示 “english”</p>
+
+<p>更多可以设置的可以参照:    <a href="https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html">Information Property List Key Reference</a></p>
+
+<h4>b、应用程序内容的国际化</h4>
+
+<p>1、新建Localization.strings 资源文件；</p>
+
+<p>2、单击该文件，在文件简介这里有一个localization 这个栏目，勾选你需要的语言（前提是你在 project的info下面 新建了这些语言）</p>
+
+<p>3、如一个菜单实现国际化</p>
+
+<p>在Localization.strings 的chinese 文件下
+“menu” = “菜单”</p>
+
+<p>在english 文件下
+“menu” = “menu”</p>
+
+<p>在使用的时候 NSLocalizedString(@"menu", @""); 返回该语言环境下的字符内容。</p>
+
+<h3>总结</h3>
+
+<p>ios 的国际化非常简单， 大家在开发的时候如果你的应用或者游戏可能会在不同的语言环境下用到，建议假如国际化，会使你的应用受众更广。</p>
+</body>
+</html>
